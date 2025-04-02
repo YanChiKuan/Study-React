@@ -1,0 +1,24 @@
+.list-item{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+.del-btn{
+  font-size: 10px;
+  color: #ccc;
+}
+.tab{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  width: 100px;
+  h5{
+    color: #ccc;
+    cursor: pointer;
+    &.active{
+      color:rgb(0, 195, 255)
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.grid_container{
+  width: 100%;
+  min-height: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: grid;
+  // grid-template-columns: 1fr 2fr 1fr 1fr;//等分,自动填充,
+  // grid-template-columns: 100px 200px 300px 400px;//固定宽度
+  // grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));//自动填充,最小宽度200px,最大宽度1fr
+  gap: 10px;
+
+  .grid_item{
+    // height: 100px;
+    background-color: pink;
+    border-radius: 10px;
+    &:first-child{
+      background-color: lightblue;
+      grid-row: 1/3;
+      grid-column: 1/3;
+    }
+  }
+
+}
