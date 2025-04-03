@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useRef } from 'react'
 import '../styles/List.scss'
 import _ from 'lodash'
 import classNames from 'classnames'
@@ -20,6 +20,7 @@ const List = () => {
 
   const [activeTab, setActiveTab] = useState(tabList[0].name)
   const [commentValue,setCommentValue]=useState('')
+  const commentRef=useRef(null)
 
   const handleDelete = (id) => {
     console.log(id)
@@ -63,6 +64,8 @@ const List = () => {
     )
     //清空输入框
     setCommentValue('')
+    //聚焦
+    commentRef.current.focus()
   }
 
   return (
@@ -95,7 +98,7 @@ const List = () => {
           </li>
         ))}
       </ul>
-      <textarea name="" id="" cols="30" rows="10" value={commentValue} onChange={(e)=>handleCommentChange(e.target.value)}></textarea>
+      <textarea ref={commentRef} name="" id="" cols="30" rows="10" value={commentValue} onChange={(e)=>handleCommentChange(e.target.value)}></textarea>
       <button onClick={handlePublish}>点击发表</button>
     </>
   )
